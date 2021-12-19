@@ -1,2 +1,0 @@
-# 3Dgrafika
-Matej Karapetrić
