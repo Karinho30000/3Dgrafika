@@ -4,5 +4,5 @@ Ovaj repozitorij sadrži projekt i rješenja zadataka izrađenih u sklopu kolegi
 
 U završnom projektu razvijena je interaktivna 3D igra, u kojoj su:
 - Svi likovi i objekti modelirani u Blenderu
-- Igra implementirana u Unity game engineu
+- Igra implementirana u Godot game engineu
 - Omogućeno kretanje lika u prostoru korištenjem tipkovnice
