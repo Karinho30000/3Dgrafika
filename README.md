@@ -6,3 +6,5 @@ U završnom projektu razvijena je interaktivna 3D igra, u kojoj su:
 - Svi likovi i objekti modelirani u Blenderu
 - Igra implementirana u Godot game engineu
 - Omogućeno kretanje lika u prostoru korištenjem tipkovnice
+
+U folderu "Završni projekt" nalaze se svi korišteni objekti i skripte te kratak video prikaza igre.
