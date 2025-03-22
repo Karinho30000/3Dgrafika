@@ -1,4 +1,4 @@
-*3D Računalna Grafika*
+# 3D Računalna Grafika
 
 Ovaj repozitorij sadrži projekt i rješenja zadataka izrađenih u sklopu kolegija 3D računalna grafika, koji se izvodi na preddiplomskom studiju matematike i računarstva. Kroz kolegij su obrađeni temeljni algoritmi za 3D modeliranje, iscrtavanje scena u realnom vremenu, te primjena OpenGL biblioteke u C++ jeziku.
 
