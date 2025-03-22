@@ -1,0 +1,187 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://KinematicBody.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Rock3.tscn" type="PackedScene" id=2]
+[ext_resource path="res://base.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Tree.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Grass.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Rock2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Rock18.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Tree2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Flower.tscn" type="PackedScene" id=9]
+[ext_resource path="res://platform.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Block.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Fence2.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Fence1.tscn" type="PackedScene" id=13]
+[ext_resource path="res://World.gd" type="Script" id=14]
+
+[sub_resource type="HeightMapShape" id=2]
+margin = 0.274
+
+[sub_resource type="BoxShape" id=4]
+
+[sub_resource type="CapsuleShape" id=7]
+
+[sub_resource type="BoxShape" id=5]
+
+[sub_resource type="BoxShape" id=6]
+
+[sub_resource type="CapsuleShape" id=8]
+
+[sub_resource type="CapsuleShape" id=9]
+
+[sub_resource type="ProceduralSky" id=12]
+sun_angle_min = 57.35
+sun_angle_max = 286.88
+sun_energy = 2.0
+
+[sub_resource type="Environment" id=11]
+background_mode = 2
+background_sky = SubResource( 12 )
+background_color = Color( 0.121569, 0.517647, 0.937255, 1 )
+
+[sub_resource type="BoxShape" id=13]
+
+[node name="World" type="Spatial"]
+transform = Transform( 0.997374, 0, 0, 0, 0.997374, 0, 0, 0, 0.997374, 0.0120173, 0.0326915, -0.0139108 )
+script = ExtResource( 14 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0701769, 0.115455, -0.0179285 )
+
+[node name="Floor" type="StaticBody" parent="."]
+transform = Transform( 0.862119, 0, 0, 0, 1, 0, 0, 0, 0.588908, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor"]
+transform = Transform( 59.5606, 0, 0, 0, 1, 0, 0, 0, 65.2621, 1.82806, 0.244081, -0.892056 )
+shape = SubResource( 2 )
+
+[node name="base" parent="Floor" instance=ExtResource( 3 )]
+transform = Transform( 39.1041, 0, 0, 0, 32.8726, 0, 0, 0, 50, 0, 7.77212, 0 )
+
+[node name="Tree" type="StaticBody" parent="."]
+transform = Transform( 0.517132, 0, -0.855907, 0, 1, 0, 0.855907, 0, 0.517132, 11.175, 0, 12.2545 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Tree"]
+transform = Transform( 0.340173, 0, 0.0104742, 0, 5.72142, 0, 0.0104744, 0, 0.329165, 0.222636, 0, -0.118628 )
+shape = SubResource( 4 )
+
+[node name="Tree2" parent="Tree" instance=ExtResource( 8 )]
+transform = Transform( 5, 0, -2.38419e-07, 0, 5, 0, 2.38419e-07, 0, 5, 2.61154, -1.35576, 9.86513 )
+
+[node name="Rock" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5284, -2.39046e-07, -13.4399 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Rock"]
+transform = Transform( 0.0279246, 0, -1.17795, 0, 1, 0, 1.46416, 0, 0.0347094, -0.019094, 0.411965, -0.10917 )
+shape = SubResource( 7 )
+
+[node name="Rock2" parent="Rock" instance=ExtResource( 6 )]
+
+[node name="Grass2" parent="Rock" instance=ExtResource( 5 )]
+transform = Transform( 1.18891, 0, 0, 0, 1.28235, 0, 0, 0, 1, -2.47761, 2.39046e-07, -0.0194899 )
+
+[node name="Grass3" parent="Rock" instance=ExtResource( 5 )]
+transform = Transform( 0.728829, 0, 0, 0, 0.702981, 0, 0, 0, 0.808716, -0.28703, 2.39046e-07, -1.8026 )
+
+[node name="Grass" parent="Rock" instance=ExtResource( 5 )]
+transform = Transform( 1.63242, 0, 0, 0, 1.29841, 0, 0, 0, 2.0281, 2.18122, 2.39046e-07, 1.39792 )
+
+[node name="Tree2" type="StaticBody" parent="."]
+transform = Transform( 1.27469, -0.00191477, 0.790667, 0.00136551, 1.5, 0.00143114, -0.790668, -0.000496435, 1.27469, -13.9503, 0, -9.94891 )
+
+[node name="Tree" parent="Tree2" instance=ExtResource( 4 )]
+transform = Transform( -1.59679, 0, -1.20427, 0, 2, 0, 1.20427, 0, -1.59679, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Tree2"]
+transform = Transform( 0.340173, 0, 0.0104742, 0, 5.72142, 0, 0.0104744, 0, 0.329165, 0.222636, 0, -0.118628 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Tree2"]
+transform = Transform( 0.398491, 0, 0.0380467, 0, 0.339385, 0, 0.038047, 0, 0.358508, 0, 5.51608, 0 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Tree2"]
+transform = Transform( 0.0232871, -1.73669, 0.0604837, 0.102339, 0.796266, 0.0968667, -0.129034, 0.3181, 0.0877413, -1.99062, 5.94702, 0.282761 )
+shape = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+transform = Transform( 0.877062, 0, -0.480377, 0, 1, 0, 0.480377, 0, 0.877062, 16.7416, 0, -7.35068 )
+
+[node name="Rock14" parent="StaticBody" instance=ExtResource( 2 )]
+
+[node name="Grass" parent="StaticBody" instance=ExtResource( 5 )]
+transform = Transform( 3.21367, 0, -0.224242, 0, 2.41368, 0, -0.224239, 0, 2.92708, -1.64671, 0.00315015, -2.45894 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1.5963, 0, -0.967468, 0, 1.9028, 0, 1.04762, 0, 1.47364, -0.258853, 0, 0.223314 )
+shape = SubResource( 8 )
+
+[node name="StaticBody2" type="StaticBody" parent="."]
+
+[node name="Rock18" parent="StaticBody2" instance=ExtResource( 7 )]
+transform = Transform( 0.479338, 0, -1.94171, 1.44413, 1.33694, 0.356503, 1.29797, -1.48748, 0.320423, 4.30843, -3.81649, -11.3057 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody2"]
+transform = Transform( 0.544116, 0, 3.9751, 0, 3.66705, 0, -4.44362, 0, 0.579707, 4.28894, 9.56185e-07, -13.551 )
+shape = SubResource( 9 )
+
+[node name="Flower" parent="StaticBody2" instance=ExtResource( 9 )]
+transform = Transform( -1.6958, 0, -1.06031, 0, 2, 0, 1.06031, 0, -1.6958, -2.42647, -1.09804, -13.3434 )
+
+[node name="Grass" parent="StaticBody2/Flower" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0.173735, 0.631466, -1.54586 )
+
+[node name="Grass2" parent="StaticBody2/Flower" instance=ExtResource( 5 )]
+transform = Transform( -0.291205, 0, -0.670045, 0, 0.700001, 0, 0.670045, 0, -0.291205, 0.105938, 0.631466, -2.36892 )
+
+[node name="platform" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -18.4146, -0.544128, 0.996023 )
+
+[node name="Blocks" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213496, 0, 0.495031 )
+
+[node name="Block" parent="Blocks" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2697, 3.17273, 5.52771 )
+
+[node name="Block2" parent="Blocks" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2276, 1.13407, 5.56612 )
+
+[node name="Block3" parent="Blocks" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2593, 1.17131, 5.5405 )
+
+[node name="Block4" parent="Blocks" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2534, 3.18366, 5.54109 )
+
+[node name="Block5" parent="Blocks" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.248, 5.1848, 5.52332 )
+
+[node name="Block6" parent="Blocks" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1144, 1.20028, 7.73803 )
+
+[node name="Block7" parent="Blocks" instance=ExtResource( 11 )]
+transform = Transform( 0.953249, 0, 0.302187, 0, 1, 0, -0.302187, 0, 0.953249, -16.8151, 1.04136, 7.60929 )
+
+[node name="Block8" parent="Blocks" instance=ExtResource( 11 )]
+transform = Transform( -0.372437, 0, 0.928058, 0, 1, 0, -0.928058, 0, -0.372437, -15.522, 1.10722, 5.06769 )
+
+[node name="Fence1" parent="." instance=ExtResource( 13 )]
+transform = Transform( 0.410528, 0, 0.911849, 0, 1, 0, -0.911849, 0, 0.410528, -11.4919, 0.175134, 15.3836 )
+
+[node name="Spatial" parent="." instance=ExtResource( 12 )]
+transform = Transform( -0.0414399, 0, 0.999142, 0, 1, 0, -0.999142, 0, -0.0414399, -22.9326, -5.77512, 29.6157 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 11 )
+
+[node name="base" parent="." instance=ExtResource( 3 )]
+transform = Transform( 5.68336, 0, 0, 0, 8.7354, 0, 0, 0, 6.12786, 19.5348, 8.16228, 4.8023 )
+
+[node name="StaticBody" type="StaticBody" parent="base"]
+
+[node name="CollisionShape" type="CollisionShape" parent="base/StaticBody"]
+transform = Transform( 0.710355, 0, 0, 0, 0.197414, 0, 0, 0, 0.610925, 0, -0.387115, 0 )
+shape = SubResource( 13 )
+
+[node name="Block" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3657, 1.39585, 3.8123 )

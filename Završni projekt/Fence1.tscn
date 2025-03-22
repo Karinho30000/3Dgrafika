@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fence.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Material_007.material" type="Material" id=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.143253, 1, 1 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="fence" type="MeshInstance" parent="."]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.133295, 1.1716, 1.39411 )
+mesh = ExtResource( 1 )
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 2 )
+material/2 = ExtResource( 2 )
+material/3 = ExtResource( 2 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 0.486582, 0, 0, 0, 1.11848, 0, 0, 0, 1.95265, -0.0890974, 1.12489, -0.0225692 )
+shape = SubResource( 1 )
